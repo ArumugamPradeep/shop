@@ -23,9 +23,15 @@
 <meta name="author" content="">
 
 <title>Shopping Site - ${title}</title>
+<script>
+   window.menu = ' ${title}';
+</script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap readable theme-->
+<link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -67,6 +73,8 @@
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/popper.js"></script>
 		<script src="${js}/bootstrap.min.js"></script>
+		<script src="${js}/myapp.js"></script>
+		
 	</div>
 </body>
 
