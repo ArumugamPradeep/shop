@@ -34,15 +34,18 @@
 
 <body>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
+	<div class="wrapper">
 
-	<!-- Page Content -->
-	<c:if test="${userClickHome == true }">
-		<%@include file="home.jsp"%>
-	</c:if>
-	
-	<!-- load only when user clicks about -->
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
+
+		<!-- Page Content -->
+		<div class="content">
+			<c:if test="${userClickHome == true }">
+				<%@include file="home.jsp"%>
+			</c:if>
+
+			<!-- load only when user clicks about -->
 			<c:if test="${userClickAbout == true }">
 				<%@include file="about.jsp"%>
 			</c:if>
@@ -51,19 +54,20 @@
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			
-			
-			
-	<!-- /.container -->
 
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
+		</div>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.js"></script>
-	<script src="${js}/popper.js"></script>
-	<script src="${js}/bootstrap.min.js"></script>
+		<!-- /.container -->
 
+
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.js"></script>
+		<script src="${js}/popper.js"></script>
+		<script src="${js}/bootstrap.min.js"></script>
+	</div>
 </body>
 
 </html>
