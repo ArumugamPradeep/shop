@@ -24,7 +24,7 @@
 
 <title>Shopping Site - ${title}</title>
 <script>
-   window.menu = ' ${title}';
+	window.menu = ' ${title}';
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -61,6 +61,12 @@
 				<%@include file="contact.jsp"%>
 			</c:if>
 
+			<!-- load only when user clicks contact -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+
+
 		</div>
 
 		<!-- /.container -->
@@ -74,7 +80,7 @@
 		<script src="${js}/popper.js"></script>
 		<script src="${js}/bootstrap.min.js"></script>
 		<script src="${js}/myapp.js"></script>
-		
+
 	</div>
 </body>
 
