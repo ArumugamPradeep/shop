@@ -34,29 +34,25 @@
 
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
+			<div class="row">
+				<div class="col-xs-12">
 
+					<table id="productListTable"
+						class="table table-striped  table-borderd">
 
-			<div class="col-xs-12">
+						<thead>
 
-				<table id="productListTable"
-					class="table table-striped  table-borderd">
+							<tr>
+								<th>ID</th>
+								<th>NAME</th>
+							</tr>
+						</thead>
+					</table>
 
-					<thead>
-
-						<tr>
-							<th>Id</th>
-							<th>Name</th>
-					</thead>
-
-
-				</table>
+				</div>
 
 			</div>
-
 		</div>
-
 	</div>
 </div>
