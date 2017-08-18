@@ -10,3 +10,5 @@ is_active BOOLEAN,
 CONSTRAINT pk_category_id PRIMARY KEY (id)
 
 );
+INSERT INTO category (name, description,image_url,is_active) VALUES ('Mobile', 'Everything in one touch', 'CAT_2.png', true);
+INSERT INTO category (name, description,image_url,is_active) VALUES ('Laptop', 'Portable Device', 'CAT_3.png', true);
