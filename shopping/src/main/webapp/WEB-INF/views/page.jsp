@@ -25,16 +25,23 @@
 <title>Shopping Site - ${title}</title>
 <script>
 	window.menu = ' ${title}';
+	
+	window.contextRoot = '${contextRoot}';
+
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
+<!-- Custom styles for this template -->
+<link href="${css}/myapp.css" rel="stylesheet">
+
 <!-- Bootstrap readable theme-->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="${css}/myapp.css" rel="stylesheet">
+<!-- Bootstrap DataTable-->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+
 
 </head>
 
@@ -77,12 +84,18 @@
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
+		
 		<script src="${js}/popper.js"></script>
+		
 		<script src="${js}/bootstrap.min.js"></script>
-			<script src="${js}/jquery.dataTables.js"></script>
+		
+		 <script src="${js}/dataTables.bootstrap.js"></script>
+		
+        <script src="${js}/jquery.dataTables.js"></script>      
+		  
 		<script src="${js}/myapp.js"></script>
-
-	</div>
+		
+			</div>
 </body>
 
 </html>
