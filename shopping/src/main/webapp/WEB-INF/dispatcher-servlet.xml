@@ -14,7 +14,7 @@
   ">  	
    	
 
-	<context:component-scan base-package="deep.shopping.controller" />
+	<context:component-scan base-package="deep.shopping" />
     <context:component-scan base-package="deep.shoppingbackend" />
     
 
