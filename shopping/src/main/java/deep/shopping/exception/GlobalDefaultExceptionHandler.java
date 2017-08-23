@@ -1,5 +1,8 @@
 package deep.shopping.exception;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,6 +38,27 @@ public class GlobalDefaultExceptionHandler {
 		
 		return mv;
 	}
+
+	@ExceptionHandler(Exception.class)
+	public ModelAndView handlerException(Exception ex) {
+		
+		ModelAndView mv = new ModelAndView("error");
+		
+		mv.addObject("errorTitle", "Contact Administrator!");
+		
+		/*only to debug application */
+		StringWriter sw = new StringWriter();
+		PrintWriter pw = new PrintWriter(sw);
+		
+		ex.printStackTrace(pw);
+		
+		mv.addObject("errorDescription", sw.toString());
+		
+		mv.addObject("title", "Error");
+		
+		return mv;
+	}
+
 
 	
 	

@@ -61,7 +61,9 @@
 
 							<h1>${errorTitle}</h1>
 							<hr />
-							<blockquote>${errorDescription}</blockquote>
+							<blockquote style="word-wrap:break-word">
+							${errorDescription}
+							</blockquote>
 
 						</div>
 
