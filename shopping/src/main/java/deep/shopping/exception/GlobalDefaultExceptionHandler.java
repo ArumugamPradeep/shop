@@ -22,5 +22,20 @@ public class GlobalDefaultExceptionHandler {
 		return mv;
 	}
 
+	@ExceptionHandler(ProductNotFoundException.class)
+	public ModelAndView handlerProductNotFoundException() {
+		
+		ModelAndView mv = new ModelAndView("error");
+		
+		mv.addObject("errorTitle", "The Product is not avaliable!");
+		
+		mv.addObject("errorDescription", "The product you are looking for is not availble now! ");
+		
+		mv.addObject("title", "Product Unavaliable");
+		
+		return mv;
+	}
+
+	
 	
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import deep.shopping.exception.ProductNotFoundException;
 import deep.shoppingbackend.dao.CategoryDAO;
 import deep.shoppingbackend.dao.ProductDAO;
 import deep.shoppingbackend.dto.Category;
@@ -111,11 +112,12 @@ public class PageController {
 	
 
 	@RequestMapping(value = "/show/{id}/product")
-	public ModelAndView showSingleProducts(@PathVariable int id) {
+	public ModelAndView showSingleProducts(@PathVariable int id) throws ProductNotFoundException{
 		
 		ModelAndView mv= new ModelAndView("page");
 		
 		Product product = productDAO.get(id);
+		if(product == null) throw new ProductNotFoundException();
 		
 		product.setViews(product.getViews() + 1);
 		productDAO.update(product);
