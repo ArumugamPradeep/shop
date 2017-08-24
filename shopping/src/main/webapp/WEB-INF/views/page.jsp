@@ -103,6 +103,8 @@
 		
         <script src="${js}/jquery.dataTables.js"></script>      
 		  
+		<script src="${js}/bootbox.min.js"></script>  
+		  
 		<script src="${js}/myapp.js"></script>
 		
 			</div>
