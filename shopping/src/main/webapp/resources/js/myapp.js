@@ -327,5 +327,138 @@ $(function() {
 	}
 
 	// --------------------------
+	// validation code for category
 
+var $loginForm = $('#loginForm')
+
+if($loginForm.length) {
+	$loginForm.validate({
+		
+		rules : {
+			
+			username : {
+				
+				required: true,
+				email: true
+			},
+			
+			password: {
+				required: true
+			}
+		},
+		
+		messages : {
+			username : {
+				required : 'Please enter the User name!',
+				email: 'Please enter valid email address!'
+			},
+			
+			password: {
+				required: 'Please enter the password!'
+			}
+		},
+		errorElement: 'em',
+		errorPlacement: function(error, element) {
+			
+			//add the class of help-block
+			error.addClass('help-block');
+			//add the error element after the input element
+			error.insertAfter(element);
+		}
+	});
+}
+
+
+//-----------------
+//--------------------------
+// validation code for category
+
+
+
+var $categoryForm = $('#categoryForm')
+
+if($categoryForm.length) {
+$categoryForm.validate({
+	
+	rules : {
+		
+		name : {
+			
+			required: true,
+			minlength: 2
+		},
+		
+		description: {
+			required: true
+		}
+	},
+	
+	messages : {
+		name : {
+			required : 'Please add the category name!',
+			minlength: 'The category name should not be less than 2 characters'
+		},
+		
+		description: {
+			required: 'Please add a description for this category!'
+		}
+	},
+	errorElement: 'em',
+	errorPlacement: function(error, element) {
+		
+		//add the class of help-block
+		error.addClass('help-block');
+		//add the error element after the input element
+		error.insertAfter(element);
+	}
+});
+}
+
+
+//-----------------
+//handling the click event of refresh cart button
+
+$('button[name="refreshCart"]').click(function(){
+
+// fetch the cart line id
+var cartLineId = $(this).attr('value');
+var countElement = $('#count_' + cartLineId);
+
+var originalCount = countElement.attr('value');
+
+var currentCount = countElement.val();
+
+// work only when the count has changed
+
+if(currentCount !== originalCount) 
+{
+	
+	if(currentCount < 1 || currentCount > 5) {
+		//reverting back to the original count
+		//user has given value below 1 and above 5
+		
+		countElement.val(originalCount);
+		bootbox.alert({
+			size: 'medium',
+			title: 'Error',
+			message: 'Product count should be minimum 1 and maximum 5!'
+		});
+	}
+	
+	else {
+		 
+		var updateUrl = window.contextRoot + '/cart/' + cartLineId + '/update?count=' + currentCount;
+		// forward if to the controller
+		
+		window.location.href = updateUrl;
+	}
+}
+
+
+
+
+});
+
+
+//-------------------------
 });
