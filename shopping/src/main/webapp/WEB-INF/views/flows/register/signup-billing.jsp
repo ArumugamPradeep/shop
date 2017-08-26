@@ -24,15 +24,15 @@
 							<label class="control-label col-md-4" for="addressLinOne">Address Line One</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="addressLineOne" placeholder="Enter Address Line One" class="form-control" />
-								
+								<sf:errors path="addressLineOne" cssClass="help-block" element="em"></sf:errors>
 							</div>
 					</div>
 					
 					<div class="form-group">
-							<label class="control-label col-md-4" for="addressLinOne">Address Line Two</label>
+							<label class="control-label col-md-4" for="addressLinTwo">Address Line Two</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="addressLineTwo" placeholder="Enter Address Line Two" class="form-control" />
-								
+								<sf:errors path="addressLineTwo" cssClass="help-block" element="em"></sf:errors>
 							</div>
 					</div>
 					
@@ -40,7 +40,7 @@
 							<label class="control-label col-md-4" for="city">City</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="city" placeholder="Enter City Name" class="form-control" />
-								
+								<sf:errors path="city" cssClass="help-block" element="em"></sf:errors>
 							</div>
 					</div>
 					
@@ -60,7 +60,7 @@
 							<label class="control-label col-md-4" for="state">State</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="state" placeholder="Enter State Name" class="form-control" />
-								
+								<sf:errors path="state" cssClass="help-block" element="em"></sf:errors>
 							</div>
 					</div>
 					
