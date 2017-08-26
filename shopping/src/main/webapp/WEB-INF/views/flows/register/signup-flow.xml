@@ -9,7 +9,7 @@
 	<!-- is the start state -->
 
 	<view-state id="personal" view="flows/register/signup-personal" model="user">
-	<transition  on="billing" to="validate" /> 
+	<transition  on="billing" to="billing" /> 
 	
 	</view-state>
 	
@@ -27,9 +27,6 @@
 		<transition on="home" to="home" />
 
 	</global-transitions>
-
-	
-
 
 
 </flow>
