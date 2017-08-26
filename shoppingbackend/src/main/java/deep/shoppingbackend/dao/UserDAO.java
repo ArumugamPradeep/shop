@@ -18,6 +18,9 @@ public interface UserDAO {
 		Address getBillingAddress(User user);
 		List<Address> listShippingAddresses(User user);
 		
+		// alternative
+		 //Address getBillingAddress(int userId);
+		//List<Address> listShippingAddresses(int userId);
 		
 		
 		//add an cart
