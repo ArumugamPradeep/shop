@@ -25,7 +25,7 @@ public class Address implements Serializable{
 	private int id;
 	
 	
-	@ManyToOne
+/*	@ManyToOne
 	private User user;
 	
 	
@@ -34,9 +34,22 @@ public class Address implements Serializable{
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}*/
+	
+	@Column(name= "user_id")
+	private int userId;
+	
+
+
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
-		
+	
+	
 	@Column(name = "address_line_one")
 	@NotBlank(message = "Please enter address line One!")
 	private String addressLineOne;
@@ -129,7 +142,7 @@ public class Address implements Serializable{
 	public void setBilling(boolean billing) {
 		this.billing = billing;
 	}
-
+	
 	/*@Override
 	public String toString() {
 		return "Address [id=" + id + ", userId=" + userId + ", addressLineOne=" + addressLineOne + ", addressLineTwo="
