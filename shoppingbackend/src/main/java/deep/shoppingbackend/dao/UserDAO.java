@@ -3,7 +3,6 @@ package deep.shoppingbackend.dao;
 import java.util.List;
 
 import deep.shoppingbackend.dto.Address;
-import deep.shoppingbackend.dto.Cart;
 import deep.shoppingbackend.dto.User;
 
 public interface UserDAO {
@@ -24,6 +23,6 @@ public interface UserDAO {
 		
 		
 		//add an cart
-		boolean updateCart(Cart cart);
+		//boolean updateCart(Cart cart);
 	
 }

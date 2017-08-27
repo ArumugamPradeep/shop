@@ -28,9 +28,8 @@
 <title>Shopping Site - ${title}</title>
 <script>
 	window.menu = ' ${title}';
-	
-	window.contextRoot = '${contextRoot}';
 
+	window.contextRoot = '${contextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -72,21 +71,28 @@
 			</c:if>
 
 			<!-- load only when user clicks list product -->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+			<c:if
+				test="${userClickAllProducts == true or userClickCategoryProducts == true }">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 
-            <!-- load only when user clicks show product -->
+			<!-- load only when user clicks show product -->
 			<c:if test="${userClickShowProduct == true }">
 				<%@include file="singleProduct.jsp"%>
 			</c:if>
-             
-              <!-- load only when user clicks manage product -->
+
+			<!-- load only when user clicks manage product -->
 			<c:if test="${userClickManageProducts == true }">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
-            
-              
+
+			<!-- load only when user clicks show cart-->
+			<c:if test="${userClickShowCart == true }">
+
+				<%@include file="cart.jsp"%>
+			</c:if>
+
+
 		</div>
 
 		<!-- /.container -->
@@ -97,22 +103,22 @@
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
-		
+
 		<script src="${js}/jquery.validate.js"></script>
-		
+
 		<script src="${js}/popper.js"></script>
-		
+
 		<script src="${js}/bootstrap.min.js"></script>
-		
-		 <script src="${js}/dataTables.bootstrap.js"></script>
-		
-        <script src="${js}/jquery.dataTables.js"></script>      
-		  
-		<script src="${js}/bootbox.min.js"></script>  
-		  
+
+		<script src="${js}/dataTables.bootstrap.js"></script>
+
+		<script src="${js}/jquery.dataTables.js"></script>
+
+		<script src="${js}/bootbox.min.js"></script>
+
 		<script src="${js}/myapp.js"></script>
-		
-			</div>
+
+	</div>
 </body>
 
 </html>
