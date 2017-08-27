@@ -12,8 +12,10 @@
 
     <context:component-scan base-package="deep.shoppingbackend" />
 	
-
+    <http pattern="/resources/**" security="none"/>
+     
 	<http>
+	    <intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/**" access="hasAuthority('USER')" />
 		<form-login login-page="/login" />
 		<logout />
