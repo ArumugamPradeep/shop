@@ -1,6 +1,5 @@
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
-
 <div class="container">
 
 	<div class="row">
@@ -101,15 +100,15 @@
 
 						</div>
 
-						<!-- File element for image upload -->
+						<!--  -->
 						<div class="form-group">
 							<label class="control-label col-md-4" for="file">Select
 								an Image:</label>
 							<div class="col-md-8">
 
+
 								<sf:input type="file" path="file" id="file" class="form-control" />
 								<sf:errors path="file" cssClass="help-block" element="em" />
-
 							</div>
 
 						</div>
@@ -217,7 +216,7 @@
 		</div>
 	</div>
 
-<div class="modal fade" id="myCategoryModal" role="dialog"
+	<div class="modal fade" id="myCategoryModal" role="dialog"
 		tabindex="-1">
 
 		<div class="modal-dialog" role="document">
