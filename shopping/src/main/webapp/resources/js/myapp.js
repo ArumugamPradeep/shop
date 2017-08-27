@@ -106,10 +106,17 @@ $(function() {
 											+ data
 											+ '/product"class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;';
 
-									if (row.quantity < 1) {
+							     if (row.quantity < 1) {
 										str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 
 									} else {
+										if(userRole == 'ADMIN') {
+											
+											str += '<a href="'+window.contextRoot+ '/manage/'+data+'/product" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';
+										}
+										
+										else {
+									
 
 										str += '<a href="'
 												+ window.contextRoot
@@ -117,7 +124,7 @@ $(function() {
 												+ data
 												+ '/product"class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
 
-									}
+									}}
 									return str;
 								}
 							}
@@ -473,47 +480,6 @@ $(function() {
 					});
 
 	// -------------------------
-	// validation code for login
-
-	var $loginForm = $('#loginForm')
-
-	if ($loginForm.length) {
-		$loginForm.validate({
-
-			rules : {
-
-				username : {
-
-					required : true,
-					email : true
-				},
-
-				password : {
-					required : true
-				}
-			},
-
-			messages : {
-				username : {
-					required : 'Please enter the User name!',
-					email : 'Please enter valid email address!'
-				},
-
-				password : {
-					required : 'Please enter the password!'
-				}
-			},
-			errorElement : 'em',
-			errorPlacement : function(error, element) {
-
-				// add the class of help-block
-				error.addClass('help-block');
-				// add the error element after the input element
-				error.insertAfter(element);
-			}
-		});
-	}
-
-	// -----------------
+		// -----------------
 
 });
