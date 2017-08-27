@@ -27,7 +27,7 @@ public class HibernateConfig {
 	
 	
 	
-	@Bean
+	@Bean("dataSource")
 	public DataSource getDataSource() {
 		
 		

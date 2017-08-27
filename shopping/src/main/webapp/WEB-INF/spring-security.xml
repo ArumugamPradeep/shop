@@ -10,24 +10,26 @@
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
 
+    <context:component-scan base-package="deep.shoppingbackend" />
+	
+
 	<http>
-		<intercept-url pattern="/**" access="hasRole('USER')" />
-		<form-login />
-		<logout /> 
+		<intercept-url pattern="/**" access="hasAuthority('USER')" />
+		<form-login login-page="/login" />
+		<logout />
 	</http>
 
-
-	<authentication-manager>
-		<authentication-provider>
-             <user-service>
-                  <user name="Pradeep" password="666666" authorities="ROLE_USER, ROLE_ADMIN" />
-                  
-             </user-service>
-			
-		</authentication-provider>
-	</authentication-manager>
-
-
+   <authentication-manager>
+   <authentication-provider>
+   
+   <jdbc-user-service data-source-ref="dataSource"
+   
+   users-by-username-query="select email, password, enabled from user_detail where email = ?"
+   authorities-by-username-query="select email, role from user_detail where email = ?"
+   
+   /> 
+   </authentication-provider>   
+   </authentication-manager>
 
 
 
